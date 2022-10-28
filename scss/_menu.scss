@@ -1,0 +1,85 @@
+.menu-btn {
+    position: fixed;
+    z-index: 3;
+    left: 30px;
+    top: 30px;
+    cursor: pointer;
+
+    .btn-line {
+        width: 28px;
+        height: 3px;
+        margin: 0 0 5px 0;
+        background-color: $text-color;
+        @include myTransition;
+    }
+
+    &.close {
+        transform: rotate(90deg);
+        
+        .btn-line {
+            &:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+            }
+            &:nth-child(3) {
+                transform: rotate(-45deg) translate(6.5px, -6.5px);
+            }
+        }
+    }
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 33vw;
+    visibility: hidden;
+
+    &.show {
+        visibility: visible;
+    }
+
+    &-nav {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: flex-start;
+        justify-content: start;
+        float: left;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        padding-top: 8rem;
+        background-color: rgba(darken($background-color, 5), 0.95);
+        list-style: none;
+        transform: translate3d(-100%, 0, 0);
+        @include myTransition;
+
+        &.show {
+            transform: translate3d(0, 0, 0);
+        }    
+    }
+
+    .nav-item {
+        &.current > a {
+            color: $accent-color;
+        }
+    }
+
+    .nav-link {
+        display: inline-block;
+        position: relative;
+        font-size: 1.75rem;
+        font-weight: bold;
+        padding: 1rem 0;
+        text-decoration: none;
+        color: $text-color;
+        @include myTransition;
+
+        &:hover {
+            color: $accent-color;
+        }
+    }
+    
+}

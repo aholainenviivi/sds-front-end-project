@@ -1,0 +1,55 @@
+.best-sellers {
+    display: grid;
+    grid-template-areas:
+        'heading heading heading'
+        'product1 product2 product3';
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 2rem;
+    align-items: flex-start;
+    justify-items: center;
+
+    h1 {
+        justify-self: start;
+        grid-area: heading;
+        padding-left: 2rem;
+    }
+
+    .product1 {
+        grid-area: product1;
+    }
+
+    .product2 {
+        grid-area: product2;
+    }
+
+    .product3 {
+        grid-area: product3;
+    }
+
+    .product {
+        display: flex;
+        padding: 2rem;
+        background: darken($background-color, 5);
+        flex-direction: column;
+        justify-content: flex-start;
+        color: $text-color;
+
+
+        img {
+            max-height: 18rem;
+            width: auto;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &:hover {
+            padding: 3rem;
+            @include myTransition;
+        }
+    }
+
+    a {
+        text-decoration: none;
+    }
+}

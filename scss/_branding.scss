@@ -1,0 +1,32 @@
+.branding {
+    background: linear-gradient(rgba($background-color, 0.5), rgba($background-color, 0.5)), url(../img/branding_background.jpg);
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    padding: 7rem 3rem 3rem 3rem;
+    z-index: -2;
+
+    .icons {
+        margin-top: 2.5rem;
+        padding-left: 4rem;
+        background: rgba(darken($background-color, 5), 0.5);
+        margin-right: -5rem;
+        margin-left: -3rem;
+        text-decoration: none;
+        color: $text-color;
+
+        a {
+            padding: 0.5rem;
+            color: setTextColor($background-color);
+
+            &:any-link {
+                color: $text-color;
+            }
+
+            &:hover {
+                color: $accent-color;
+                @include myTransition;
+            }
+        }
+    }
+}

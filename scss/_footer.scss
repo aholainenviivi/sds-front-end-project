@@ -1,0 +1,8 @@
+#main-footer {
+    display: flex;
+    height: 2rem;
+    background: darken($background-color, 10);
+    color: $text-color;
+    align-items: center;
+    padding-left: 2rem;
+}
